@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29ADDD7A2004708C00D33C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ADDD792004708C00D33C23 /* AppDelegate.swift */; };
+		29ADDD7C2004708C00D33C23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ADDD7B2004708C00D33C23 /* ViewController.swift */; };
+		29ADDD7F2004708C00D33C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29ADDD7D2004708C00D33C23 /* Main.storyboard */; };
+		29ADDD812004708C00D33C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29ADDD802004708C00D33C23 /* Assets.xcassets */; };
+		29ADDD842004708C00D33C23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29ADDD822004708C00D33C23 /* LaunchScreen.storyboard */; };
+		29ADDD8F2004708C00D33C23 /* HueExpressionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ADDD8E2004708C00D33C23 /* HueExpressionTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29ADDD8B2004708C00D33C23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29ADDD6E2004708C00D33C23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29ADDD752004708C00D33C23;
+			remoteInfo = HueExpression;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		29ADDD762004708C00D33C23 /* HueExpression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueExpression.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29ADDD792004708C00D33C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		29ADDD7B2004708C00D33C23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		29ADDD7E2004708C00D33C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		29ADDD802004708C00D33C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29ADDD832004708C00D33C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		29ADDD852004708C00D33C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29ADDD8A2004708C00D33C23 /* HueExpressionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HueExpressionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29ADDD8E2004708C00D33C23 /* HueExpressionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueExpressionTests.swift; sourceTree = "<group>"; };
+		29ADDD902004708C00D33C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29ADDD732004708C00D33C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29ADDD872004708C00D33C23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29ADDD6D2004708C00D33C23 = {
+			isa = PBXGroup;
+			children = (
+				29ADDD782004708C00D33C23 /* HueExpression */,
+				29ADDD8D2004708C00D33C23 /* HueExpressionTests */,
+				29ADDD772004708C00D33C23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29ADDD772004708C00D33C23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29ADDD762004708C00D33C23 /* HueExpression.app */,
+				29ADDD8A2004708C00D33C23 /* HueExpressionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29ADDD782004708C00D33C23 /* HueExpression */ = {
+			isa = PBXGroup;
+			children = (
+				29ADDD792004708C00D33C23 /* AppDelegate.swift */,
+				29ADDD7B2004708C00D33C23 /* ViewController.swift */,
+				29ADDD7D2004708C00D33C23 /* Main.storyboard */,
+				29ADDD802004708C00D33C23 /* Assets.xcassets */,
+				29ADDD822004708C00D33C23 /* LaunchScreen.storyboard */,
+				29ADDD852004708C00D33C23 /* Info.plist */,
+			);
+			path = HueExpression;
+			sourceTree = "<group>";
+		};
+		29ADDD8D2004708C00D33C23 /* HueExpressionTests */ = {
+			isa = PBXGroup;
+			children = (
+				29ADDD8E2004708C00D33C23 /* HueExpressionTests.swift */,
+				29ADDD902004708C00D33C23 /* Info.plist */,
+			);
+			path = HueExpressionTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29ADDD752004708C00D33C23 /* HueExpression */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29ADDD932004708C00D33C23 /* Build configuration list for PBXNativeTarget "HueExpression" */;
+			buildPhases = (
+				29ADDD722004708C00D33C23 /* Sources */,
+				29ADDD732004708C00D33C23 /* Frameworks */,
+				29ADDD742004708C00D33C23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HueExpression;
+			productName = HueExpression;
+			productReference = 29ADDD762004708C00D33C23 /* HueExpression.app */;
+			productType = "com.apple.product-type.application";
+		};
+		29ADDD892004708C00D33C23 /* HueExpressionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29ADDD962004708C00D33C23 /* Build configuration list for PBXNativeTarget "HueExpressionTests" */;
+			buildPhases = (
+				29ADDD862004708C00D33C23 /* Sources */,
+				29ADDD872004708C00D33C23 /* Frameworks */,
+				29ADDD882004708C00D33C23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29ADDD8C2004708C00D33C23 /* PBXTargetDependency */,
+			);
+			name = HueExpressionTests;
+			productName = HueExpressionTests;
+			productReference = 29ADDD8A2004708C00D33C23 /* HueExpressionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29ADDD6E2004708C00D33C23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Kyle Haptonstall";
+				TargetAttributes = {
+					29ADDD752004708C00D33C23 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					29ADDD892004708C00D33C23 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 29ADDD752004708C00D33C23;
+					};
+				};
+			};
+			buildConfigurationList = 29ADDD712004708C00D33C23 /* Build configuration list for PBXProject "HueExpression" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 29ADDD6D2004708C00D33C23;
+			productRefGroup = 29ADDD772004708C00D33C23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29ADDD752004708C00D33C23 /* HueExpression */,
+				29ADDD892004708C00D33C23 /* HueExpressionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29ADDD742004708C00D33C23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29ADDD842004708C00D33C23 /* LaunchScreen.storyboard in Resources */,
+				29ADDD812004708C00D33C23 /* Assets.xcassets in Resources */,
+				29ADDD7F2004708C00D33C23 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29ADDD882004708C00D33C23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29ADDD722004708C00D33C23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29ADDD7C2004708C00D33C23 /* ViewController.swift in Sources */,
+				29ADDD7A2004708C00D33C23 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29ADDD862004708C00D33C23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29ADDD8F2004708C00D33C23 /* HueExpressionTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29ADDD8C2004708C00D33C23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29ADDD752004708C00D33C23 /* HueExpression */;
+			targetProxy = 29ADDD8B2004708C00D33C23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		29ADDD7D2004708C00D33C23 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29ADDD7E2004708C00D33C23 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		29ADDD822004708C00D33C23 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29ADDD832004708C00D33C23 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29ADDD912004708C00D33C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		29ADDD922004708C00D33C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29ADDD942004708C00D33C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AF6KS27797;
+				INFOPLIST_FILE = HueExpression/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khaptonstall.HueExpression;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29ADDD952004708C00D33C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AF6KS27797;
+				INFOPLIST_FILE = HueExpression/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khaptonstall.HueExpression;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		29ADDD972004708C00D33C23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AF6KS27797;
+				INFOPLIST_FILE = HueExpressionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khaptonstall.HueExpressionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HueExpression.app/HueExpression";
+			};
+			name = Debug;
+		};
+		29ADDD982004708C00D33C23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AF6KS27797;
+				INFOPLIST_FILE = HueExpressionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khaptonstall.HueExpressionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HueExpression.app/HueExpression";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29ADDD712004708C00D33C23 /* Build configuration list for PBXProject "HueExpression" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29ADDD912004708C00D33C23 /* Debug */,
+				29ADDD922004708C00D33C23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29ADDD932004708C00D33C23 /* Build configuration list for PBXNativeTarget "HueExpression" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29ADDD942004708C00D33C23 /* Debug */,
+				29ADDD952004708C00D33C23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29ADDD962004708C00D33C23 /* Build configuration list for PBXNativeTarget "HueExpressionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29ADDD972004708C00D33C23 /* Debug */,
+				29ADDD982004708C00D33C23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29ADDD6E2004708C00D33C23 /* Project object */;
+}
