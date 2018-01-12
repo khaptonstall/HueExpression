@@ -39,3 +39,9 @@ curl -X POST \
 2. Press the link button on your Hue Bridge
 3. Run the above command again
 4. Grab the `username` value from the response JSON
+
+## Resources
+- [Apple's Face Tracking with AR Kit WWDC video](https://developer.apple.com/videos/play/fall2017/601/)
+- [Apple's Creating Face-Based AR Experiences](https://developer.apple.com/documentation/arkit/creating_face_based_ar_experiences)
+- [Apple's documentation on Blend Shapes](https://developer.apple.com/documentation/arkit/arfaceanchor/2928251-blendshapes?language=objc)
+- [Phillip's Hue developer site](https://www.developers.meethue.com)
