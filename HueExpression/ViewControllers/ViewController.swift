@@ -7,7 +7,6 @@
 //
 
 import ARKit
-import AVFoundation
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,9 +19,7 @@ class ViewController: UIViewController {
     // MARK: Private
     
     @IBOutlet private weak var instructionsLabel: UILabel!
-    @IBOutlet private weak var liveCameraView: UIView!
 
-    private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     private var arSession = ARSession()
     private var isLoading = false
     private var lightIsOn = true
@@ -41,30 +38,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard ARFaceTrackingConfiguration.isSupported,
-            let frontCamera = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.front).devices.first,
-            let captureInput = try? AVCaptureDeviceInput(device: frontCamera) else {
-                return
+        guard ARFaceTrackingConfiguration.isSupported else {
+            return
         }
-
-        avSession.addInput(captureInput)
-        videoPreviewLayer = AVCaptureVideoPreviewLayer(session: avSession)
-        videoPreviewLayer!.videoGravity = AVLayerVideoGravity.resizeAspect
-        videoPreviewLayer!.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-        liveCameraView.layer.insertSublayer(videoPreviewLayer!, at: 0)
-        avSession.startRunning()
 
         let configuration = ARFaceTrackingConfiguration()
         configuration.isLightEstimationEnabled = true
         arSession.delegate = self
         arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        videoPreviewLayer?.frame = liveCameraView.bounds
-    }
-    
+
     // MARK: Button Actions
     
     @IBAction private func testLightButtonPressed(_ sender: Any) {
@@ -119,13 +102,15 @@ extension ViewController: ARSessionDelegate {
         }
         
         guard let mouthSmileLeft =  faceAnchor.blendShapes[.mouthSmileLeft] as? Float,
-            let mouthSmileRight = faceAnchor.blendShapes[.mouthSmileRight] as? Float else {
+            let mouthSmileRight = faceAnchor.blendShapes[.mouthSmileRight] as? Float,
+            let browDownLeft = faceAnchor.blendShapes[.browDownLeft] as? Float,
+            let browDownRight = faceAnchor.blendShapes[.browDownRight] as? Float else {
                 return
         }
         
-        if mouthSmileLeft > 0.5 && mouthSmileRight > 0.5 {
+        if (mouthSmileLeft > 0.5 && mouthSmileRight > 0.5) && (browDownLeft < 0.1 && browDownRight < 0.1) {
             updateLight(withHueType: .happy)
-        } else if mouthSmileLeft < 0.2 && mouthSmileRight < 0.2 {
+        } else if (mouthSmileLeft < 0.2 && mouthSmileRight < 0.2) && (browDownLeft > 0.5 && browDownRight > 0.5)  {
             updateLight(withHueType: .mad)
         }
     }

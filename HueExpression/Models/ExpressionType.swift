@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+enum ExpressionType {
+    
+    // MARK: Cases
+    
+    case happy
+    case mad
+    
+    // MARK: - Variables
+    // MARK: Public
+    
+    var hueValue: UInt16 {
+        switch self {
+        case .happy:
+            return 25500 //Green
+        case .mad:
+            return 65535 //Red
+        }
+    }
+    
+}
