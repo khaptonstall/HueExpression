@@ -24,7 +24,8 @@ class ViewController: UIViewController {
     private var isLoading = false
     private var lightIsOn = true
     private var lastExpressionType: ExpressionType?
-    
+    private var timer: Timer?
+
     // MARK: Lazy
     
     lazy private var avSession: AVCaptureSession = {
@@ -81,13 +82,15 @@ class ViewController: UIViewController {
         
         ServerController.shared.updateLightHue(withType: type) {
             self.lastExpressionType = type
-            Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false
-                , block: { (_) in
-                    DispatchQueue.main.async {
-                        self.instructionsLabel.text = Constant.instructionLabelDefault
-                        self.isLoading = false
-                    }
-            })
+            DispatchQueue.main.async {
+                self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false
+                    , block: { _ in
+                        DispatchQueue.main.async {
+                            self.instructionsLabel.text = Constant.instructionLabelDefault
+                            self.isLoading = false
+                        }
+                })
+            }
         }
     }
 }

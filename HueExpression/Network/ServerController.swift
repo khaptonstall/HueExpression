@@ -6,8 +6,6 @@
 //  Copyright © 2018 Kyle Haptonstall. All rights reserved.
 //
 
-import Alamofire
-
 class ServerController {
     
     private enum Constant {
@@ -33,14 +31,24 @@ class ServerController {
     func updateLightHue(withType type: ExpressionType, completion: @escaping (() -> Void)) {
         let urlString = apiBasePath + String(format: Constant.apiURLLightStateFormat, Constant.lightID)
         guard let url = URL(string: urlString) else {
-            return
+            return completion()
         }
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        
         let parameters: [String: Any] = ["hue": type.hueValue]
-        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON { response in
-            print(response.result.value)
+        guard let jsonBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            return completion()
+        }
+        
+        request.httpBody = jsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion()
         }
+        
+        task.resume()
     }
     
     func changeLightState(isOn: Bool, completion: @escaping (() -> Void)) {
@@ -49,11 +57,21 @@ class ServerController {
             return
         }
         
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        
         let parameters: [String: Any] = ["on": isOn]
-        Alamofire.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON { response in
-            print(response.result.value)
+        guard let jsonBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
+            return completion()
+        }
+        
+        request.httpBody = jsonBody
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             completion()
         }
+        
+        task.resume()
     }
     
 }
