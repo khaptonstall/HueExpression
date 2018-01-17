@@ -13,9 +13,8 @@ In order to run this demo app you will need:
 ## Setup
 
 1. Clone this repo
-2. Run `pod install`
-3. In Xcode, open `ServerController.swift` and replace `hueBridgeIP` with this IP address (see below)
-4. In Xcode, open `ServerController.swift` and replace `hueUsername` with your authenticated username (see below)
+2. In Xcode, open `ServerController.swift` and replace `hueBridgeIP` with this IP address (see below)
+3. In Xcode, open `ServerController.swift` and replace `hueUsername` with your authenticated username (see below)
 4. Run the app to your iPhone X
 
 #### Getting Your Bridge's IP
