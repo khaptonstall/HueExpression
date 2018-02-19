@@ -6,72 +6,109 @@
 //  Copyright © 2018 Kyle Haptonstall. All rights reserved.
 //
 
+import Foundation
+
 class ServerController {
+    
+    typealias ServerDataResponse<T: Decodable> = (_ data: [String: T]?, _ error: ServerError?) -> Void
+    typealias ServerErrorResponse = (_ error: ServerError?) -> Void
+    
+    // MARK: Constants
     
     private enum Constant {
         static let hueBridgeIP = ""
         static let hueUsername = ""
         static let lightID = "1"
-        static let apiURLLightStateFormat = "/lights/%@/state"
     }
     
-    // MARK: - Variables
-    // MARK: Public
+    // MARK: Public Variables
     
     static var shared = ServerController()
     
-    // MARK: Private
+    // MARK: Private Variables
     
-    private var apiBasePath: String {
-        return "http://\(Constant.hueBridgeIP)/api/\(Constant.hueUsername)"
+    static var apiBaseURL: URL {
+        guard let url = URL(string: "http://\(Constant.hueBridgeIP)/api/\(Constant.hueUsername)/") else {
+            fatalError("Unable to produce base API url")
+        }
+        return url
     }
     
     // MARK: Public Methods
     
-    func updateLightHue(withType type: ExpressionType, completion: @escaping (() -> Void)) {
-        let urlString = apiBasePath + String(format: Constant.apiURLLightStateFormat, Constant.lightID)
-        guard let url = URL(string: urlString) else {
-            return completion()
+    func getLights(completion: @escaping ServerDataResponse<Light>) {
+        performMappingRequest(withRouter: LightsRouter.getLights) { (data: [String: Light]?, error) in
+            completion(data, error)
         }
+    }
+    
+    func updateLightHue(withType type: ExpressionType, completion: @escaping ServerErrorResponse) {
+        let router = LightsRouter.updateLightState(id: Constant.lightID, isOn: nil, hue: type.hueValue)
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        
-        let parameters: [String: Any] = ["hue": type.hueValue]
-        guard let jsonBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-            return completion()
+        performRequest(withRouter: router) { (error) in
+            completion(error)
         }
-        
-        request.httpBody = jsonBody
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            completion()
+    }
+    
+    func updateLightState(isOn: Bool, completion: @escaping ServerErrorResponse) {
+        let router = LightsRouter.updateLightState(id: Constant.lightID, isOn: isOn, hue: nil)
+        performRequest(withRouter: router) { (error) in
+            completion(error)
+        }
+    }
+    
+    // MARK: Private Methods
+    
+    private func performMappingRequest<T: Decodable>(withRouter router: Router, completion: @escaping ServerDataResponse<T>) {
+        let task = URLSession.shared.dataTask(with: router.generateURLRequest()) { (data, _, error) in
+            if let data = data {
+                do {
+                    let decodedData = try JSONDecoder().decode([String: T].self, from: data)
+                    completion(decodedData, nil)
+                } catch {
+                    completion(nil, ServerError.jsonParsingError)
+                }
+            } else if let error = error {
+                completion(nil, ServerError.apiError(error: error))
+            } else {
+                completion(nil, nil)
+            }
         }
         
         task.resume()
     }
     
-    func changeLightState(isOn: Bool, completion: @escaping (() -> Void)) {
-        let urlString = apiBasePath + String(format: Constant.apiURLLightStateFormat, Constant.lightID)
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        
-        let parameters: [String: Any] = ["on": isOn]
-        guard let jsonBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else {
-            return completion()
-        }
-        
-        request.httpBody = jsonBody
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            completion()
+    private func performRequest(withRouter router: Router, completion: @escaping ServerErrorResponse) {
+        let task = URLSession.shared.dataTask(with: router.generateURLRequest()) { (_, _, error) in
+            if let error = error {
+                completion(ServerError.apiError(error: error))
+            } else {
+                completion(nil)
+            }
         }
         
         task.resume()
     }
     
 }
+
+// MARK: - ServerController + ServerError
+
+extension ServerController {
+
+    enum ServerError: Error {
+        case jsonParsingError
+        case apiError(error: Error)
+
+        var message: String {
+            switch self {
+            case .apiError(let error):
+                return error.localizedDescription
+            case .jsonParsingError:
+                return "An error occurred when parsing JSON"
+            }
+        }
+    }
+
+}
+
