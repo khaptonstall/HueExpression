@@ -47,6 +47,7 @@ class ViewController: UIViewController {
         configuration.isLightEstimationEnabled = true
         arSession.delegate = self
         arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        getLights()
     }
 
     // MARK: Button Actions
@@ -55,41 +56,67 @@ class ViewController: UIViewController {
         guard !isLoading else {
             return
         }
-        
+
         isLoading = true
-        ServerController.shared.changeLightState(isOn: lightIsOn) {
-            self.lightIsOn = !self.lightIsOn
+        ServerController.shared.updateLightState(isOn: lightIsOn) { error in
             self.isLoading = false
+
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.displayErrorAlert(withError: error)
+                }
+            } else {
+                self.lightIsOn = !self.lightIsOn
+            }
         }
     }
     
     // MARK: Private Methods
+    
+    private func getLights() {
+        ServerController.shared.getLights { (lights, error) in
+            if let lights = lights {
+                print("Got lights: \(lights)")
+            } else if let error = error {
+                DispatchQueue.main.async {
+                    self.displayErrorAlert(withError: error)
+                }
+            }
+        }
+    }
     
     private func updateLight(withHueType type: ExpressionType) {
         guard !isLoading,
             type != lastExpressionType else {
             return
         }
-        
+
         isLoading = true
-        
+
         switch type {
         case .happy:
             instructionsLabel.text = "Detected a happy expression - turning green"
         case .mad:
             instructionsLabel.text = "Detected a mad expression - turning red"
         }
-        
-        ServerController.shared.updateLightHue(withType: type) {
-            self.lastExpressionType = type
-            DispatchQueue.main.async {
-                self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false
-                    , block: { _ in
-                        DispatchQueue.main.async {
-                            self.instructionsLabel.text = Constant.instructionLabelDefault
-                            self.isLoading = false
-                        }
-                })
+
+        ServerController.shared.updateLightHue(withType: type) { error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    self.displayErrorAlert(withError: error)
+                }
+            } else {
+                self.lastExpressionType = type
+                DispatchQueue.main.async {
+                    self.timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false
+                        , block: { _ in
+                            DispatchQueue.main.async {
+                                self.instructionsLabel.text = Constant.instructionLabelDefault
+                                self.isLoading = false
+                            }
+                    })
+                }
             }
         }
     }
@@ -121,5 +148,6 @@ extension ViewController: ARSessionDelegate {
     func session(_ session: ARSession, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
+    
 }
 

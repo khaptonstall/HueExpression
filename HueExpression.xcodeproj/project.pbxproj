@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29574D292038E87F009F8EB1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29574D282038E87F009F8EB1 /* Router.swift */; };
+		29574D2C2038E8C0009F8EB1 /* LightsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29574D2B2038E8C0009F8EB1 /* LightsRouter.swift */; };
+		29574D2E203A5A80009F8EB1 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29574D2D203A5A80009F8EB1 /* Light.swift */; };
+		29574D30203A5A9D009F8EB1 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29574D2F203A5A9D009F8EB1 /* HTTPMethod.swift */; };
+		29574D33203A7C01009F8EB1 /* UIViewController+ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29574D32203A7C01009F8EB1 /* UIViewController+ErrorAlert.swift */; };
 		29ADDD7A2004708C00D33C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ADDD792004708C00D33C23 /* AppDelegate.swift */; };
 		29ADDD7C2004708C00D33C23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ADDD7B2004708C00D33C23 /* ViewController.swift */; };
 		29ADDD7F2004708C00D33C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29ADDD7D2004708C00D33C23 /* Main.storyboard */; };
@@ -29,6 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29574D282038E87F009F8EB1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		29574D2B2038E8C0009F8EB1 /* LightsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsRouter.swift; sourceTree = "<group>"; };
+		29574D2D203A5A80009F8EB1 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		29574D2F203A5A9D009F8EB1 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		29574D32203A7C01009F8EB1 /* UIViewController+ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorAlert.swift"; sourceTree = "<group>"; };
 		29ADDD762004708C00D33C23 /* HueExpression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HueExpression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ADDD792004708C00D33C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29ADDD7B2004708C00D33C23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +74,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29574D272038E877009F8EB1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				29574D282038E87F009F8EB1 /* Router.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		29574D2A2038E8BB009F8EB1 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				29574D2B2038E8C0009F8EB1 /* LightsRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		29574D31203A7BF5009F8EB1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				29574D32203A7C01009F8EB1 /* UIViewController+ErrorAlert.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		29ADDD6D2004708C00D33C23 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,8 @@
 		29ADDD782004708C00D33C23 /* HueExpression */ = {
 			isa = PBXGroup;
 			children = (
+				29574D31203A7BF5009F8EB1 /* Extensions */,
+				29574D272038E877009F8EB1 /* Protocols */,
 				29ADDDA4200861CF00D33C23 /* Models */,
 				29ADDDA7200861E900D33C23 /* ViewControllers */,
 				29ADDDA120083F9200D33C23 /* Network */,
@@ -127,6 +163,7 @@
 		29ADDDA120083F9200D33C23 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				29574D2A2038E8BB009F8EB1 /* Routers */,
 				29ADDDA220083FA400D33C23 /* ServerController.swift */,
 			);
 			path = Network;
@@ -136,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				29ADDDA5200861D800D33C23 /* ExpressionType.swift */,
+				29574D2D203A5A80009F8EB1 /* Light.swift */,
+				29574D2F203A5A9D009F8EB1 /* HTTPMethod.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,8 +293,13 @@
 			files = (
 				29ADDD7C2004708C00D33C23 /* ViewController.swift in Sources */,
 				29ADDDA6200861D800D33C23 /* ExpressionType.swift in Sources */,
+				29574D33203A7C01009F8EB1 /* UIViewController+ErrorAlert.swift in Sources */,
 				29ADDD7A2004708C00D33C23 /* AppDelegate.swift in Sources */,
 				29ADDDA320083FA500D33C23 /* ServerController.swift in Sources */,
+				29574D292038E87F009F8EB1 /* Router.swift in Sources */,
+				29574D30203A5A9D009F8EB1 /* HTTPMethod.swift in Sources */,
+				29574D2E203A5A80009F8EB1 /* Light.swift in Sources */,
+				29574D2C2038E8C0009F8EB1 /* LightsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
